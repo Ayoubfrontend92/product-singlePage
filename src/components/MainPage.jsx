@@ -1,12 +1,21 @@
 import React from 'react'
 import {HiPlusSm} from 'react-icons/hi'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
-
 import product1 from '../assets/image-product-1.jpg'
 import smallProduct1 from '../assets/image-product-1-thumbnail.jpg'
 
+//TODO: redux
+import {increase,dicrease} from '../components/redux/counter/counterAction'
+import {useSelector,useDispatch} from 'react-redux'
+
+
 
 const MainPage = () => {
+
+  const counter  = useSelector(state =>state.counter)
+  const dispatch = useDispatch()
+
+
   return (
     <div className='w-full md:flex flex-row  items-center  justify-center'>
        <div className='flex'>
@@ -48,9 +57,9 @@ const MainPage = () => {
 
             <div className='flex ml-[50px] mt-10'>
                 <div className='bg-gray-100 shadow-sm shadow-slate-200 flex w-[140px] h-[40px] rounded justify-center items-center'>
-                <button className='mx-4'><p className='text-amber-500'><HiPlusSm size={25}/> </p></button>
-                <p className='mx-4'>0</p>
-                <button className='mx-4'><p className='text-amber-500'><HiPlusSm size={25}/> </p></button>
+                <button className='mx-4'><p className='text-amber-500' onClick={()=>dispatch(increase())}><HiPlusSm size={25}/> </p></button>
+                <p className='mx-4'>{counter}</p>
+                <button className='mx-4'><p className='text-amber-500' onClick={()=>dispatch(dicrease())}><HiPlusSm size={25}/> </p></button>
                 </div>
                 <div className='mx-4 bg-amber-400 rounded-lg flex items-center justify-center cursor-pointer text-white font-bold text-sm shadow-lg shadow-orange-200 w-[210px]'> <span className='mr-2'><AiOutlineShoppingCart/></span> Add to cart</div>
             </div>
