@@ -9,7 +9,7 @@ const App = () => {
     <Provider store={store}>
         <div>
          <Navbar/>
-         <MainPage/>
+         <MainPage  />
         </div>
     </Provider>
   

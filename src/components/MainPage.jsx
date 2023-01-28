@@ -7,13 +7,16 @@ import smallProduct1 from '../assets/image-product-1-thumbnail.jpg'
 //TODO: redux
 import {increase,dicrease} from '../components/redux/counter/counterAction'
 import {useSelector,useDispatch} from 'react-redux'
+// import { useState } from 'react'
 
 
 
 const MainPage = () => {
 
   const counter  = useSelector(state =>state.counter)
+  const price  = useSelector(state =>state.price)
   const dispatch = useDispatch()
+ 
 
 
   return (
@@ -43,7 +46,7 @@ const MainPage = () => {
             <p className='text-sm text-gray-500 mt-[25px]'>These low-profile sneakers are your perfect casual wear <br /> companion. Featuring a durable rubber outer sole, they’ll <br /> withstand everything the weather can offer.</p>
            
             <div className='flex items-center mt-[25px]'>
-            <h2 className='font-bold text-2xl'>$125.00 </h2> 
+            <h2 className='font-bold text-2xl'>{price}.00 $</h2> 
             
             <div className='bg-amber-300/50 text-center mx-5 rounded w-[35px]'>
             <p className='text-[14px] font-bold rounded-lg text-amber-500'>50%</p>
@@ -61,7 +64,7 @@ const MainPage = () => {
                 <p className='mx-4'>{counter}</p>
                 <button className='mx-4'><p className='text-amber-500' onClick={()=>dispatch(dicrease())}><HiPlusSm size={25}/> </p></button>
                 </div>
-                <div className='mx-4 bg-amber-400 rounded-lg flex items-center justify-center cursor-pointer text-white font-bold text-sm shadow-lg shadow-orange-200 w-[210px]'> <span className='mr-2'><AiOutlineShoppingCart/></span> Add to cart</div>
+                <div className='mx-4 bg-[#ff8f4a] rounded-lg flex items-center justify-center cursor-pointer text-white font-bold text-sm shadow-lg shadow-orange-200 w-[210px]'> <span className='mr-2'><AiOutlineShoppingCart/></span> Add to cart</div>
             </div>
         </div>
        </div>
