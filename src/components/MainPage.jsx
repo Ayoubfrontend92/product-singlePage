@@ -38,7 +38,7 @@ const MainPage = () => {
         
         <div className='flex flex-col  w-[500px] h-screen items-start justify-center border-t-2 border-zinc-400'>
           <div className=' ml-[50px]'>
-          <h4 className='font-bold uppercase text-amber-500 '>Sneaker Company </h4>
+          <h4 className='font-bold uppercase text-amber-500 '>Adubi Company </h4>
             <h1 className='text-4xl text-black font-bold mt-[15px]'>Fall Limited Edition <br /> Sneakers</h1>
             <p className='text-sm text-gray-500 mt-[25px]'>These low-profile sneakers are your perfect casual wear <br /> companion. Featuring a durable rubber outer sole, they’ll <br /> withstand everything the weather can offer.</p>
            
