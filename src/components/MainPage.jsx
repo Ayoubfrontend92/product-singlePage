@@ -1,6 +1,8 @@
 import React from 'react'
 import {HiPlusSm} from 'react-icons/hi'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
+import {IoIosClose} from 'react-icons/io'
+import {GoTrashcan} from 'react-icons/go'
 import product1 from '../assets/image-product-1.jpg'
 import smallProduct1 from '../assets/image-product-1-thumbnail.jpg'
 import smallProduct2 from '../assets/image-product-2-thumbnail.jpg'
@@ -29,7 +31,27 @@ const MainPage = () => {
 
 
   return (
-    <>
+    <>   {photo ? 
+           
+           <div className='flex justify-center  top-0 absolute w-full h-screen z-40 bg-black/80'>
+            <div className='flex-col w-[450px] mt-[100px]  h-200 '>
+              <div>
+              <img src={product1} alt="product" className='w-[440px]  rounded-2xl' />
+              </div>
+              
+           <div className='flex mt-5 ml-[5px]  '>
+               <img src={smallProduct1} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-6 rounded-2xl' />
+               <img src={smallProduct2} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-6 rounded-2xl' />
+               <img src={smallProduct3} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-6 rounded-2xl' />
+               <img src={smallProduct4} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-6  rounded-2xl' />  
+         </div>
+            </div>
+         <IoIosClose size={60} className='text-gray-100 mt-[50px] cursor-pointer' onClick={photoHandlre} />
+         </div>        
+        :''}
+
+
+
     <div className='w-full md:flex flex-row  items-center  justify-center'>
 
        <div className='flex'>
