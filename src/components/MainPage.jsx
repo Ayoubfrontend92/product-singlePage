@@ -3,10 +3,14 @@ import {HiPlusSm} from 'react-icons/hi'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import product1 from '../assets/image-product-1.jpg'
 import smallProduct1 from '../assets/image-product-1-thumbnail.jpg'
+import smallProduct2 from '../assets/image-product-2-thumbnail.jpg'
+import smallProduct3 from '../assets/image-product-3-thumbnail.jpg'
+import smallProduct4 from '../assets/image-product-4-thumbnail.jpg'
 
 //TODO: redux
 import {increase,dicrease} from '../components/redux/counter/counterAction'
 import {useSelector,useDispatch} from 'react-redux'
+import { useState } from 'react'
 // import { useState } from 'react'
 
 
@@ -17,26 +21,32 @@ const MainPage = () => {
   const price  = useSelector(state =>state.price)
   const dispatch = useDispatch()
  
+  const [photo,setPhoto]=useState(false)
+
+  const photoHandlre = (prev) =>{
+    setPhoto((prev)=>!prev)
+  }
 
 
   return (
+    <>
     <div className='w-full md:flex flex-row  items-center  justify-center'>
+
        <div className='flex'>
         <div className='w-[500px]  h-screen border-t-2 border-zinc-400 '>
 
           <div className='flx-col ml-[80px]'>
-            <img src={product1} alt="product" className='w-[400px] mt-[70px] rounded-2xl' />
+            <img src={product1} alt="product" onClick={photoHandlre} className='w-[400px] mt-[70px] cursor-pointer rounded-2xl' />
             <div className='flex mt-5  '>
-                <img src={smallProduct1} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-3 rounded-2xl' />
-                <img src={smallProduct1} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-3 rounded-2xl' />
-                <img src={smallProduct1} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-3 rounded-2xl' />
-                <img src={smallProduct1} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-3 rounded-2xl' />  
+                <img src={smallProduct1} onClick={photoHandlre} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-3 rounded-2xl' />
+                <img src={smallProduct2} onClick={photoHandlre} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-3 rounded-2xl' />
+                <img src={smallProduct3} onClick={photoHandlre} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-3 rounded-2xl' />
+                <img src={smallProduct4} onClick={photoHandlre} alt="" className='w-[90px] cursor-pointer hover:outline hover:outline-amber-400 mr-3 rounded-2xl' />  
           </div>
-          </div>
-
-         
-         
+          </div>         
         </div>
+
+     
 
         
         <div className='flex flex-col  w-[500px] h-screen items-start justify-center border-t-2 border-zinc-400'>
@@ -71,6 +81,7 @@ const MainPage = () => {
 
 
     </div>
+    </>
   )
 }
 
